@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     echo "building image"
-                    buildImage()
+                    buildImage 'eslam1/jenkins-repo:jma-2.0'
                 }
             }
         }
