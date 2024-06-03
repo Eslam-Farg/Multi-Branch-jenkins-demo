@@ -36,7 +36,7 @@ env.IMAGE_NAME = "eslam1/jenkins-repo:$version-$BUILD_NUMBER"
                     sh 'git config –global user.email "loom2141@gmail.com"'
                     sh 'git status'
                     sh 'git remote remove origin'
-                    Sh 'git remote add origin https:// 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@github.com Eslam-Farg/Multi-Branch-jenkins-demo.git'
+                    Sh 'git remote add origin https://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@github.com/Eslam-Farg/Multi-Branch-jenkins-demo.git'
                     sh ' git add .'
                     sh ' git commit -m "ci: version bump"'
                     sh 'git push origin HEAD:main'
