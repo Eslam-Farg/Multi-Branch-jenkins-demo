@@ -32,8 +32,8 @@ env.IMAGE_NAME = "eslam1/jenkins-repo:$version-$BUILD_NUMBER"
             stage("commit version update") {
             steps {
                 script {
-                    sh 'git config –global user.name "Jenkins"'
-                    sh 'git config –global user.email "loom2141@gmail.com"'
+                    sh 'git config –-global user.name "Jenkins"'
+                    sh 'git config –-global user.email "loom2141@gmail.com"'
                     sh 'git status'
                     sh 'git remote remove origin'
                     sh 'git remote add origin https://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@github.com/Eslam-Farg/Multi-Branch-jenkins-demo.git'
