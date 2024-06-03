@@ -1,4 +1,4 @@
-
+            
 
 @Library('-jenkins-shared-library')
 
@@ -23,7 +23,23 @@ stage("increment version'") {
 
 def matcher = readFile('pom.xml') =~  '<version>(.+)</version>'
 def version = matcher [0] [1]
-env.IMAGE_NAME = "$version-$BUILD_NUMBER"
+env.IMAGE_NAME = "eslam1/jenkins-repo:$version-$BUILD_NUMBER"
+
+                }
+            }
+        }
+
+            stage("commit version update") {
+            steps {
+                script {
+                    sh 'git config –global user.name "Jenkins"'
+                    sh 'git config –global user.email "loom2141@gmail.com"'
+                    sh 'git status'
+                    sh 'git remote remove origin'
+                    Sh 'git remote add origin https:// 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@github.com Eslam-Farg/Multi-Branch-jenkins-demo.git'
+                    sh ' git add .'
+                    sh ' git commit -m "ci: version bump"'
+                    sh 'git push origin HEAD:main'
 
                 }
             }
@@ -53,7 +69,7 @@ env.IMAGE_NAME = "$version-$BUILD_NUMBER"
             steps {
                 script {
                     echo "building image"
-                    buildImage ("eslam1/jenkins-repo:${IMAGE_NAME}")
+                    buildImage ("${IMAGE_NAME}")
                 }
             }
         }
