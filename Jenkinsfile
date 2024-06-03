@@ -36,7 +36,7 @@ env.IMAGE_NAME = "eslam1/jenkins-repo:$version-$BUILD_NUMBER"
             sh 'git config --global user.email "loom2141@gmail.com"'
                     sh 'git status'
                     
-                    sh 'git rm --cached Multi-Branch-jenkins-demo'
+
                     
                     sh 'git add .'
                     sh 'git commit -m "ci: version bump"'
